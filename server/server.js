@@ -6,12 +6,11 @@ const http = require("http")
 const {Server} = require("socket.io")
 
 
-const server = http.createServer(app)
+const server = http.createServer(app) 
 const bodyParser = require('body-parser');
 
 const io = new Server(server , {
     cors: {
-        origin: "http://localhost:3000",
         methods: ["GET", "POST"]
     },
     pingInterval: 10000,
@@ -107,6 +106,7 @@ app.get("/api", (req, res) => {
         "queuedPlayers": gameQueueArray, 
         "currentGames": gamesArray,
         "sockets": socketsToUsernames, 
+        "hostname": http.request.headers.host,
     })
 })
 

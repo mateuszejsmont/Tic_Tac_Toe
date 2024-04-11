@@ -1,9 +1,8 @@
 import './App.css'
 import React, {useEffect, useState} from 'react'
-import io from 'socket.io-client';
+import io from 'socket.io-client'; 
 
-//  "proxy": "http://127.0.0.1:8080",
-const socket = io.connect('http://localhost:8080')
+const socket = io.connect(':8080')
 
 function App() {
   const [inQueue, setInQueue] = useState(false)
