@@ -105,8 +105,7 @@ app.get("/api", (req, res) => {
     return res.json({
         "queuedPlayers": gameQueueArray, 
         "currentGames": gamesArray,
-        "sockets": socketsToUsernames, 
-        "hostname": http.request.headers.host,
+        "sockets": socketsToUsernames 
     })
 })
 
